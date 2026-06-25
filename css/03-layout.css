@@ -1,0 +1,232 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(5, 5, 5, 0.78);
+  border-bottom: 1px solid var(--fv-line-soft);
+  backdrop-filter: blur(18px);
+}
+
+.header__inner {
+  width: min(calc(100% - 48px), var(--fv-container));
+  height: var(--fv-header);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand {
+  color: var(--fv-white);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+
+.brand::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 7px;
+  border-radius: 50%;
+  background: var(--fv-orange);
+  box-shadow: 0 0 24px var(--fv-orange);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex: 1;
+}
+
+.nav a,
+.footer__nav a {
+  color: var(--fv-muted);
+  font-weight: 700;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.nav a:hover,
+.footer__nav a:hover {
+  color: var(--fv-orange);
+  transform: translateY(-1px);
+}
+
+.header-cta {
+  min-width: 256px;
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--fv-orange), var(--fv-orange-3));
+  color: var(--fv-black);
+  font-weight: 900;
+  box-shadow: var(--fv-shadow-orange);
+}
+
+.burger {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--fv-line);
+  border-radius: 50%;
+  background: var(--fv-card);
+}
+
+.burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 5px auto;
+  background: var(--fv-orange);
+}
+
+.footer {
+  position: relative;
+  padding: 92px 0 44px;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(255, 159, 28, 0.22), transparent 28rem),
+    linear-gradient(135deg, #050505 0%, #111 52%, #2a1803 100%);
+  border-top: 1px solid var(--fv-line);
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  left: -8%;
+  top: 0;
+  width: 58%;
+  height: 120px;
+  background: var(--fv-black);
+  border-radius: 0 0 80px 0;
+}
+
+.footer__top {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr .72fr .48fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.footer h2 {
+  margin: 0 0 8px;
+  color: var(--fv-white);
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.footer p {
+  margin: 0;
+  color: var(--fv-muted);
+  font-weight: 600;
+}
+
+.footer__business h3 {
+  margin: 0 0 20px;
+  color: var(--fv-white);
+  font-size: 24px;
+}
+
+.footer__business a {
+  display: inline-flex;
+  margin: 0 8px 12px 0;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: var(--fv-orange);
+  color: var(--fv-black);
+  font-weight: 900;
+}
+
+.footer__nav {
+  display: grid;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.footer__socials {
+  display: grid;
+  grid-template-columns: repeat(2, 56px);
+  gap: 16px;
+}
+
+.footer__socials span {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--fv-orange);
+  color: var(--fv-black);
+  font-size: 25px;
+  font-weight: 900;
+  box-shadow: 0 16px 32px rgba(255,159,28,.18);
+}
+
+.footer__bottom {
+  position: relative;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 22px 34px;
+  border-radius: 999px;
+  background: var(--fv-orange);
+  color: var(--fv-black);
+  font-weight: 900;
+}
+
+.brand--logo {
+  display: inline-flex;
+  align-items: center;
+  width: clamp(170px, 18vw, 260px);
+  height: 58px;
+  overflow: hidden;
+}
+
+.brand--logo::after {
+  display: none;
+}
+
+.brand--logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.footer-logo {
+  display: inline-flex;
+  width: min(360px, 100%);
+  margin-bottom: 14px;
+}
+
+.footer-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer__socials .social-link {
+  width: 56px;
+  height: 56px;
+}
+
+/* Poprawka: usunięcie czarnej figury z dolnej sekcji/footera */
+.footer::before {
+  display: none;
+}
