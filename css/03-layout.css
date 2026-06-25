@@ -230,3 +230,35 @@
 .footer::before {
   display: none;
 }
+
+
+/* Footer cleanup: footer/lower without menu text blocks */
+.footer__top {
+  grid-template-columns: minmax(220px, 1fr) auto;
+  align-items: center;
+}
+
+.footer__top > div:first-child {
+  max-width: 360px;
+}
+
+.footer__socials {
+  justify-self: end;
+}
+
+@media (max-width: 768px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .footer__top > div:first-child {
+    max-width: 100%;
+  }
+
+  .footer__socials {
+    justify-self: center;
+  }
+}
