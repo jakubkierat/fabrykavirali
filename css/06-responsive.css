@@ -831,3 +831,60 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Mobile about collage preserving desktop look */
+@media (max-width:768px){
+  .about__visual{
+    position:relative;
+    min-height:520px;
+    display:block;
+  }
+  .about-shape,.cert{display:block;}
+  .about-shape{
+    position:absolute;
+    background:linear-gradient(180deg,#d18a1c,#9f6510);
+    border-radius:28px;
+    opacity:.9;
+  }
+  .about-shape:first-of-type{
+    width:46%;
+    height:320px;
+    left:8%;
+    top:50px;
+    transform:rotate(-3deg);
+  }
+  .about-shape:last-of-type{
+    width:48%;
+    height:320px;
+    right:8%;
+    top:90px;
+    transform:rotate(4deg);
+  }
+  .about-img{
+    position:absolute;
+    width:46%;
+    height:340px;
+    object-fit:cover;
+    border-radius:26px;
+    border:5px solid #fff;
+  }
+  .about-img:first-of-type{
+    left:5%;
+    top:10px;
+    transform:rotate(-4deg);
+    z-index:2;
+  }
+  .about-img:last-of-type{
+    right:5%;
+    top:90px;
+    transform:rotate(5deg);
+    z-index:3;
+  }
+  .cert{
+    position:absolute;
+    width:86px;
+    height:86px;
+    z-index:5;
+  }
+}
