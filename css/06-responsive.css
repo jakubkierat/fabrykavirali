@@ -1207,3 +1207,58 @@
     font-size: 31px !important;
   }
 }
+
+/* Final mobile refinements: offer wording and centered Meta Ads tile */
+@media (max-width: 760px) {
+  .brand-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    align-items: stretch !important;
+  }
+
+  .brand-row span {
+    width: 100% !important;
+    min-height: 112px !important;
+    padding: 18px 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: clamp(28px, 8vw, 42px) !important;
+    line-height: 1.08 !important;
+    border-radius: 24px !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  .brand-row span:last-child {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: min(68%, 240px) !important;
+    min-height: 100px !important;
+  }
+
+  .panel h3 {
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-row {
+    gap: 12px !important;
+  }
+
+  .brand-row span {
+    min-height: 104px !important;
+    font-size: clamp(25px, 7.7vw, 36px) !important;
+    padding: 16px 12px !important;
+  }
+
+  .brand-row span:last-child {
+    width: min(72%, 220px) !important;
+    min-height: 94px !important;
+  }
+}
