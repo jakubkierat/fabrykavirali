@@ -700,3 +700,93 @@
   top: auto;
   bottom: 128px;
 }
+
+/* Client content update: stats, profile links and refined portfolio cards */
+.stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-card--links {
+  grid-template-columns: 1fr;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(255,159,28,.18), transparent 22rem),
+    linear-gradient(145deg, rgba(29,29,29,.96), rgba(8,8,8,.94));
+}
+
+.project-card--links > div {
+  width: 100%;
+}
+
+.profile-links {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.profile-links a {
+  display: flex;
+  min-height: 74px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,159,28,.34);
+  border-radius: 999px;
+  background: rgba(255,159,28,.12);
+  color: var(--fv-white);
+  font-weight: 900;
+  text-align: center;
+  transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+}
+
+.profile-links a:hover {
+  transform: translateY(-3px);
+  background: var(--fv-orange);
+  color: var(--fv-black);
+  box-shadow: 0 18px 42px rgba(255,159,28,.22);
+}
+
+.project-note {
+  margin-top: 22px;
+  color: var(--fv-muted) !important;
+  font-weight: 700 !important;
+}
+
+/* Final visual fixes: CTA spacing, testimonial avatars and profile links */
+.contact-cta .btn {
+  margin-bottom: 38px;
+}
+
+.quote-card footer img {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  background: var(--fv-black);
+  display: block;
+}
+
+.profile-links {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.profile-links a {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 14px 10px;
+  font-size: clamp(11px, .9vw, 15px);
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 1180px) {
+  .profile-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

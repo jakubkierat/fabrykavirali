@@ -216,12 +216,9 @@
 }
 
 .footer__socials {
-  display:grid;
-  grid-template-columns:repeat(2,56px);
-  grid-auto-rows:56px;
-  gap:16px 18px;
-  justify-self:end;
-  margin-right:24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 .footer__socials .social-link {
@@ -232,38 +229,4 @@
 /* Poprawka: usunięcie czarnej figury z dolnej sekcji/footera */
 .footer::before {
   display: none;
-}
-
-
-/* Footer cleanup: footer/lower without menu text blocks */
-.footer__top {
-  grid-template-columns: minmax(220px, 1fr) auto;
-  align-items: center;
-}
-
-.footer__top > div:first-child {
-  max-width: 360px;
-}
-
-.footer__socials {
-  justify-self: end;
-}
-
-@media (max-width: 768px) {
-  .footer__top {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-    gap: 28px;
-  }
-
-  .footer__top > div:first-child {
-    max-width: 100%;
-  }
-
-  .footer__socials {
-    display:flex;
-    justify-self:center;
-    margin-right:0;
-  }
 }
