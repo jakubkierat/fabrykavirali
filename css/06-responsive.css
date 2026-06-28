@@ -1109,3 +1109,17 @@
     grid-column: auto !important;
   }
 }
+
+/* Final fix: center texts inside circular labels in mobile About section */
+@media (max-width: 768px) {
+  .about__visual .cert {
+    display: grid !important;
+    place-items: center !important;
+    align-items: center !important;
+    justify-items: center !important;
+    text-align: center !important;
+    line-height: 1.18 !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+}
