@@ -790,3 +790,50 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.project-card--reverse > div{position:relative;z-index:2;background:linear-gradient(90deg,rgba(18,18,18,.98) 82%,rgba(18,18,18,0));}
+.project-card--reverse img{display:block;}
+
+/* Kacper photo project card */
+.project-card--kacper {
+  grid-template-columns: .82fr 1fr;
+  align-items: stretch;
+}
+
+.project-card--kacper > div:first-child {
+  align-self: stretch;
+}
+
+.project-card--kacper .project-card__image {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  align-self: stretch !important;
+  min-height: 260px;
+  border-radius: 0 32px 32px 0;
+}
+
+.project-card--kacper .project-card__image img {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  object-fit: cover;
+  object-position: 58% 35%;
+  transform: none !important;
+}
+
+@media (max-width: 860px) {
+  .project-card--kacper {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--kacper .project-card__image {
+    min-height: 320px;
+  }
+
+  .project-card--kacper .project-card__image img {
+    min-height: 320px;
+  }
+}

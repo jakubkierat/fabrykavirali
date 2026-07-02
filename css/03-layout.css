@@ -230,3 +230,36 @@
 .footer::before {
   display: none;
 }
+
+
+/* Final polish: mobile menu animation and clearer footer social grid */
+.nav {
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+@media (max-width: 860px) {
+  .nav {
+    opacity: 0;
+    transform: translateY(-10px);
+    backdrop-filter: blur(18px);
+  }
+
+  .nav.is-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 861px) {
+  .footer__top {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+
+  .footer__socials {
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(2, 56px);
+    gap: 16px;
+  }
+}
