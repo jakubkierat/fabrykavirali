@@ -1351,3 +1351,188 @@
     object-position: 58% center;
   }
 }
+
+/* Zmiany po uwagach 02/07/2026 — mobile/tablet */
+@media (max-width: 860px) {
+  .hero-primary-cta {
+    width: min(100%, 360px);
+    min-height: 62px;
+    font-size: 17px;
+  }
+
+  .creator-profiles {
+    grid-template-columns: 1fr;
+  }
+
+  .creator-profiles > div {
+    order: -1;
+  }
+
+  .realization-showcase__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .realization-shot:last-child {
+    grid-column: 1 / -1;
+    width: min(360px, 100%);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-primary-cta {
+    width: 100%;
+  }
+
+  .realization-showcase {
+    padding: 22px;
+  }
+
+  .realization-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .realization-shot,
+  .realization-shot:last-child {
+    width: 100%;
+    min-height: 300px;
+    grid-column: auto;
+  }
+
+  .realization-shot img {
+    height: 300px;
+  }
+}
+
+
+/* Responsywność nowych kart platform i realizacji */
+@media (max-width: 980px) {
+  .platform-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .platform-card,
+  .platform-card:nth-child(1),
+  .platform-card:nth-child(2),
+  .platform-card:nth-child(3),
+  .platform-card:nth-child(4),
+  .platform-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .platform-card:last-child {
+    grid-column: 1 / -1;
+    width: min(360px, 100%);
+    justify-self: center;
+  }
+
+  .profile-links--cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .story__collage--two {
+    min-height: 570px;
+  }
+
+  .story__collage--two img {
+    width: 280px !important;
+    height: 430px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .platform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-card,
+  .platform-card:last-child {
+    width: 100%;
+    min-height: 112px;
+    grid-column: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .platform-card strong {
+    font-size: 22px;
+  }
+
+  .profile-links--cards {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-links--cards a {
+    min-height: 92px;
+  }
+
+  .story__collage--two {
+    min-height: 520px;
+  }
+
+  .story__collage--two img {
+    width: 68% !important;
+    height: 390px !important;
+  }
+
+  .story__collage--two img:nth-child(1) {
+    left: 0 !important;
+    top: 18px !important;
+  }
+
+  .story__collage--two img:nth-child(2) {
+    right: 0 !important;
+    top: 108px !important;
+  }
+}
+
+
+@media (max-width: 860px) {
+  .profile-links--classic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .profile-links--classic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Finalna responsywność platform i realizacji wideo */
+@media (max-width: 980px) {
+  .video-showcase {
+    width: min(100%, 720px);
+    margin-top: 56px;
+  }
+
+  .video-showcase__grid {
+    grid-template-columns: repeat(2, minmax(0, 250px));
+  }
+}
+
+@media (max-width: 620px) {
+  .platform-grid .platform-card__icon {
+    width: 52px;
+    height: 52px;
+    min-height: 52px;
+    flex-basis: 52px;
+    border-radius: 16px;
+  }
+
+  .platform-grid .platform-card__icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .video-showcase {
+    width: 100%;
+    margin-top: 44px;
+    padding: 22px 16px;
+  }
+
+  .video-showcase__grid {
+    grid-template-columns: minmax(0, 290px);
+  }
+}
