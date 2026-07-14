@@ -32,6 +32,71 @@ textarea?.addEventListener('input', () => {
   if (count) count.textContent = `${textarea.value.length} / ${textarea.maxLength}`;
 });
 
+// --- FAQ: rozwijane odpowiedzi ---
+document.querySelectorAll('[data-faq-toggle]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+
+// --- Wysyłka formularza kontaktowego ---
+const contactForm = document.querySelector('[data-contact-form]');
+const formStatus = document.querySelector('[data-form-status]');
+const submitButton = contactForm?.querySelector('button[type="submit"]');
+
+const setFormStatus = (message, type) => {
+  if (!formStatus) return;
+  formStatus.textContent = message;
+  formStatus.classList.remove('is-success', 'is-error');
+  if (type) formStatus.classList.add(`is-${type}`);
+};
+
+contactForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    return;
+  }
+
+  const endpoint = contactForm.getAttribute('action');
+  if (!endpoint) {
+    setFormStatus('Formularz nie jest jeszcze podłączony.', 'error');
+    return;
+  }
+
+  submitButton?.setAttribute('disabled', 'true');
+  setFormStatus('Wysyłanie…', null);
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { Accept: 'application/json' },
+    });
+
+    let data = null;
+    try {
+      data = await response.json();
+    } catch (parseError) {
+      data = null;
+    }
+
+    if (response.ok && (data ? data.success : true)) {
+      setFormStatus((data && data.message) || 'Dziękujemy! Wiadomość została wysłana — odezwiemy się najszybciej, jak to możliwe.', 'success');
+      contactForm.reset();
+      if (count) count.textContent = `0 / ${textarea?.maxLength ?? 600}`;
+    } else {
+      setFormStatus((data && data.message) || 'Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na biuro@fabrykavirali.pl.', 'error');
+    }
+  } catch (error) {
+    setFormStatus('Brak połączenia z serwerem formularza. Spróbuj ponownie lub napisz na biuro@fabrykavirali.pl.', 'error');
+  } finally {
+    submitButton?.removeAttribute('disabled');
+  }
+});
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -93,7 +158,10 @@ const moveTestimonials = (direction) => {
   updateTestimonials();
 };
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const startTestimonials = () => {
+  if (prefersReducedMotion) return;
   if (testimonialTimer) clearInterval(testimonialTimer);
   testimonialTimer = setInterval(() => moveTestimonials(1), 3500);
 };
@@ -155,7 +223,33 @@ const closePrivacyModal = () => {
   document.body.classList.remove('modal-open');
 };
 
-cookieAccept?.addEventListener('click', () => saveCookieChoice('accepted'));
+// --- Ładowanie Google Fonts (dopiero po zgodzie użytkownika, zgodnie z polityką cookies) ---
+let fontsLoaded = false;
+const loadGoogleFonts = () => {
+  if (fontsLoaded) return;
+  fontsLoaded = true;
+
+  const preconnect1 = document.createElement('link');
+  preconnect1.rel = 'preconnect';
+  preconnect1.href = 'https://fonts.googleapis.com';
+  document.head.appendChild(preconnect1);
+
+  const preconnect2 = document.createElement('link');
+  preconnect2.rel = 'preconnect';
+  preconnect2.href = 'https://fonts.gstatic.com';
+  preconnect2.crossOrigin = '';
+  document.head.appendChild(preconnect2);
+
+  const fontStylesheet = document.createElement('link');
+  fontStylesheet.rel = 'stylesheet';
+  fontStylesheet.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap';
+  document.head.appendChild(fontStylesheet);
+};
+
+cookieAccept?.addEventListener('click', () => {
+  saveCookieChoice('accepted');
+  loadGoogleFonts();
+});
 cookieDecline?.addEventListener('click', () => saveCookieChoice('declined'));
 privacyOpenButtons.forEach((button) => button.addEventListener('click', openPrivacyModal));
 privacyCloseButtons.forEach((button) => button.addEventListener('click', closePrivacyModal));
@@ -165,3 +259,6 @@ document.addEventListener('keydown', (event) => {
 });
 
 showCookieBanner();
+
+// Jeśli zgoda była już wcześniej zapisana w tej przeglądarce, załaduj czcionkę od razu
+if (localStorage.getItem(COOKIE_STORAGE_KEY) === 'accepted') loadGoogleFonts();

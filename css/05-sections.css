@@ -521,6 +521,12 @@
   will-change: transform;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track {
+    transition: none;
+  }
+}
+
 .testimonial-track .quote-card {
   flex: 0 0 calc((100% - 52px) / 3);
 }
@@ -809,7 +815,7 @@
   overflow: hidden;
   padding: 0 !important;
   align-self: stretch !important;
-  min-height: 260px;
+  min-height: 530px;
   border-radius: 0 32px 32px 0;
 }
 
@@ -820,7 +826,7 @@
   height: 100% !important;
   display: block;
   object-fit: cover;
-  object-position: 58% 35%;
+  object-position: center;
   transform: none !important;
 }
 

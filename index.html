@@ -12,13 +12,11 @@
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Fabryka Virali — social media, które robią robotę"/>
 <meta property="og:description" content="Robimy wideo, które robią robotę. TikTok, Reels, Shorts, strategia, nagrania i montaż."/>
-<meta property="og:image" content="assets/img/wwwglowna-1.webp"/>
+<meta property="og:image" content="https://fabrykavirali.pl/assets/img/wwwglowna-1.webp"/>
 <meta property="og:url" content="https://fabrykavirali.pl/"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="icon" type="image/png" href="assets/fv-logo.png"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts jest ładowany dopiero po zgodzie na cookies marketingowe (patrz script.js) -->
 <link href="css/01-variables.css?v=fv-mobile-fixes-20260629-1" rel="stylesheet"/>
 <link href="css/02-base.css?v=fv-mobile-fixes-20260629-1" rel="stylesheet"/>
 <link href="css/03-layout.css?v=fv-mobile-fixes-20260629-1" rel="stylesheet"/>
@@ -39,6 +37,25 @@
     "streetAddress": "Aleja Konstytucji 3 Maja 28",
     "addressLocality": "Rawa Mazowiecka",
     "addressCountry": "PL"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+48669744068",
+      "contactType": "customer service",
+      "name": "Natalia"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+48575665386",
+      "contactType": "customer service",
+      "name": "Kacper"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "5"
   },
   "sameAs": [
     "https://www.tiktok.com/@fabrykavirali",
@@ -172,6 +189,7 @@
 <button class="tab tab--yellow is-active" data-tab="one" type="button">Prowadzenie kont</button>
 <button class="tab tab--pink" data-tab="two" type="button">Nagrania i montaż</button>
 <button class="tab tab--purple" data-tab="three" type="button">Mentoring i audyty</button>
+<button class="tab tab--blue" data-tab="four" type="button">Obsługa kampanii Meta Ads</button>
 </div>
 <div class="tab-panels">
 <article class="panel is-active" data-panel="one">
@@ -204,6 +222,16 @@
 </ul>
 <a class="btn btn--purple" href="#kontakt">Porozmawiajmy</a>
 </article>
+<article class="panel" data-panel="four">
+<h3>Obsługa kampanii Meta Ads</h3>
+<p>Dla marek, które chcą przyspieszyć zasięgi płatną promocją. Uzupełniamy content organiczny o kampanie na Facebooku i Instagramie, które trafiają do właściwych odbiorców, a nie tylko „podbijają” losowy post.</p>
+<ul>
+<li><strong>Strategia i budżetowanie:</strong> dobieramy cele kampanii, grupy odbiorców i budżet do etapu rozwoju marki.</li>
+<li><strong>Kreacje reklamowe:</strong> przygotowujemy grafiki i wideo pod format reklamowy (Feed, Stories, Reels) na bazie tego, co już działa organicznie.</li>
+<li><strong>Optymalizacja i raportowanie:</strong> testujemy warianty, śledzimy wyniki i na bieżąco poprawiamy kampanię, zamiast „ustaw i zapomnij”.</li>
+</ul>
+<a class="btn btn--blue" href="#kontakt">Umów konsultację</a>
+</article>
 </div>
 </div>
 </section>
@@ -229,7 +257,7 @@
 <article class="project-card project-card--reverse project-card--kacper reveal">
 <div>
 <h3>Materiały dla firm i marek z całego kraju</h3>
-<p>Działamy nie tylko lokalnie - pomagamy markom docierać do właściwych odbiorców w całej Polsce.</p>
+<p>Działamy nie tylko lokalnie — pomagamy markom docierać do właściwych odbiorców w całej Polsce.</p>
 <ul>
 <li>nagrania, montaż i publikacja gotowych materiałów</li>
 <li>content na miesiąc lub dłuższą kampanię</li>
@@ -237,7 +265,7 @@
 </ul>
 </div>
 <div class="project-card__image">
-<img loading="lazy" decoding="async" alt="Kacper z kamerą podczas realizacji nagrań" src="assets/img/IMG_0609.jpg"/>
+<img loading="lazy" decoding="async" alt="Kacper z kamerą podczas realizacji nagrań" src="assets/img/IMG_0609-waist-up.webp"/>
 </div>
 </article>
 <article class="project-card project-card--links reveal">
@@ -257,7 +285,7 @@
 <article class="video-showcase reveal" aria-labelledby="video-showcase-title">
 <div class="video-showcase__heading">
 <h3 id="video-showcase-title">Wybrane realizacje wideo</h3>
-<p>Zobacz przykładowe materiały przygotowane dla klientów Fabryki Virali.</p>
+<p>Zobacz przykładowe materiały przygotowane dla klientów Fabryki Virali. Filmy możesz odtworzyć bez opuszczania strony.</p>
 </div>
 <div class="video-showcase__grid">
 <article class="video-card">
@@ -286,10 +314,46 @@
 <div class="container">
 <h2 class="section-title reveal">Często zadawane <strong>pytania</strong></h2>
 <div class="why-grid">
-<article class="why-card reveal"><span>?</span><h3>Czy współpracujecie tylko z dużymi markami?</h3><p>Nie. Pomagamy dużym firmom, lokalnym biznesom, osobom publicznym, a nawet twórcom, którzy dopiero zaczynają. Nie pytamy o followerów – pytamy, co chcesz osiągnąć.</p></article>
-<article class="why-card why-card--tilt reveal"><span>💡</span><h3>Czy muszę mieć gotowy pomysł na treści?</h3><p>Nie musisz. My ogarniamy cały kierunek, strategię, pomysły, scenariusze i styl komunikacji. Po zaakceptowaniu przez Ciebie – działamy za Ciebie.</p></article>
-<article class="why-card why-card--tilt-left reveal"><span>▶</span><h3>Czy pracujecie tylko na TikToku?</h3><p>Nie. Ogarnęliśmy virale na TikToku, Instagramie, YouTube Shorts i Facebooku. Znamy każdy z tych kanałów i wiemy, co tam działa.</p></article>
-<article class="why-card reveal"><span>🤝</span><h3>Jak wygląda współpraca?</h3><p>Zaczynamy od spotkania – online przez Google Meets albo osobiście przy dobrej kawie. Potem audyt, plan, strategia i działamy.</p></article>
+<article class="why-card reveal" data-faq-item>
+<button class="why-card__head" type="button" data-faq-toggle="" aria-expanded="false">
+<span class="why-card__icon">?</span>
+<h3>Czy współpracujecie tylko z dużymi markami?</h3>
+<span class="why-card__chevron" aria-hidden="true"></span>
+</button>
+<div class="why-card__answer" data-faq-answer="">
+<p>Nie. Pomagamy dużym firmom, lokalnym biznesom, osobom publicznym, a nawet twórcom, którzy dopiero zaczynają. Nie pytamy o followerów – pytamy, co chcesz osiągnąć.</p>
+</div>
+</article>
+<article class="why-card reveal" data-faq-item>
+<button class="why-card__head" type="button" data-faq-toggle="" aria-expanded="false">
+<span class="why-card__icon">💡</span>
+<h3>Czy muszę mieć gotowy pomysł na treści?</h3>
+<span class="why-card__chevron" aria-hidden="true"></span>
+</button>
+<div class="why-card__answer" data-faq-answer="">
+<p>Nie musisz. My ogarniamy cały kierunek, strategię, pomysły, scenariusze i styl komunikacji. Po zaakceptowaniu przez Ciebie – działamy za Ciebie.</p>
+</div>
+</article>
+<article class="why-card reveal" data-faq-item>
+<button class="why-card__head" type="button" data-faq-toggle="" aria-expanded="false">
+<span class="why-card__icon">▶</span>
+<h3>Czy pracujecie tylko na TikToku?</h3>
+<span class="why-card__chevron" aria-hidden="true"></span>
+</button>
+<div class="why-card__answer" data-faq-answer="">
+<p>Nie. Ogarnęliśmy virale na TikToku, Instagramie, YouTube Shorts i Facebooku. Znamy każdy z tych kanałów i wiemy, co tam działa.</p>
+</div>
+</article>
+<article class="why-card reveal" data-faq-item>
+<button class="why-card__head" type="button" data-faq-toggle="" aria-expanded="false">
+<span class="why-card__icon">🤝</span>
+<h3>Jak wygląda współpraca?</h3>
+<span class="why-card__chevron" aria-hidden="true"></span>
+</button>
+<div class="why-card__answer" data-faq-answer="">
+<p>Zaczynamy od spotkania – online przez Google Meets albo osobiście przy dobrej kawie. Potem audyt, plan, strategia i działamy.</p>
+</div>
+</article>
 </div>
 </div>
 </section>
@@ -351,20 +415,22 @@
 <a aria-label="Facebook Fabryki Virali" class="social-link" href="https://www.facebook.com/profile.php?id=61569822185009" rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M14.1 8.2V6.8c0-.7.5-.9 1-.9h2.1V2.4L14.3 2c-3 0-4.7 1.8-4.7 5v1.2H6.5V12h3.1v9.8h4V12h3.1l.5-3.8h-3.1z"></path></svg></a>
 </div>
 </div>
-<form class="form reveal reveal-delay-1">
-<label>Imię i nazwisko *</label>
-<input required="" type="text"/>
-<label>Nazwa firmy</label>
-<input type="text"/>
-<label>Adres e-mail *</label>
-<input required="" type="email"/>
-<label>Numer telefonu *</label>
-<input required="" type="tel"/>
-<label>Wiadomość</label>
-<textarea maxlength="180"></textarea>
-<p class="count">0 / 180</p>
-<label class="check"><input type="checkbox"/> <span>Wyrażam zgodę na przetwarzanie moich danych osobowych. <button class="inline-policy-link" data-privacy-open="" type="button">Polityka prywatności</button></span></label>
+<form class="form reveal reveal-delay-1" data-contact-form="" action="send-message.php" method="POST">
+<input type="text" name="website" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+<label for="cf-name">Imię i nazwisko *</label>
+<input id="cf-name" name="name" required="" type="text"/>
+<label for="cf-company">Nazwa firmy</label>
+<input id="cf-company" name="company" type="text"/>
+<label for="cf-email">Adres e-mail *</label>
+<input id="cf-email" name="email" required="" type="email"/>
+<label for="cf-phone">Numer telefonu *</label>
+<input id="cf-phone" name="phone" required="" type="tel"/>
+<label for="cf-message">Wiadomość</label>
+<textarea id="cf-message" name="message" maxlength="600"></textarea>
+<p class="count">0 / 600</p>
+<label class="check"><input id="cf-consent" name="consent" required="" type="checkbox"/> <span>Wyrażam zgodę na przetwarzanie moich danych osobowych. <button class="inline-policy-link" data-privacy-open="" type="button">Polityka prywatności</button></span></label>
 <button class="btn btn--red btn--wide" type="submit">Wyślij</button>
+<p class="form-status" data-form-status="" role="status" aria-live="polite"></p>
 </form>
 </div>
 </section>
@@ -424,16 +490,13 @@
 <p>Marketingowe / śledzące pliki cookies są plikami cookies (lub innymi formami lokalnego przechowywania) używanymi do stworzenia profilu użytkownika w celu wyświetlania mu reklam lub śledzenia tego użytkownika na tej lub na kilku witrynach w podobnych celach marketingowych.</p>
 <p>Ponieważ te pliki cookie są oznaczone jako śledzące pliki cookie, prosimy o zgodę na ich umieszczenie.</p>
 <h4>5.5 Media społecznościowe</h4>
-<p>Na naszej witrynie, mamy treści z TikTok i Instagram, żeby promować poszczególne strony (np. przyciski "przypnij", "polub to", "podziel się") w mediach społecznościowych, jak TikTok i Instagram. Ta treść jest osadzona kodem pochodzącym z TikTok i Instagram i umieszcza pliki cookies. Ta treść może przechowywać i przetwarzać pewne informacje na potrzeby spersonalizowanych reklam.</p>
-<p>Przeczytaj oświadczenie o ochronie prywatności tych sieci społecznościowych (które mogą się regularnie zmieniać), aby dowiedzieć się, co robią z twoimi (osobistymi) danymi, które przetwarzają za pomocą tych plików cookie. Odzyskiwane dane są w miarę możliwości anonimizowane. Sieci społecznościowe TikTok i Instagram są zlokalizowane w Stanach Zjednoczonych.</p>
+<p>Na naszej witrynie osadzamy nagrania wideo bezpośrednio z TikToka (odtwarzacz TikTok w sekcji „Realizacje”), a także linkujemy do naszych profili na TikToku, Instagramie, YouTube i Facebooku. Osadzony odtwarzacz TikTok ładuje się razem ze stroną i może umieszczać własne pliki cookies oraz przetwarzać pewne informacje na potrzeby statystyk i personalizacji treści — niezależnie od Twojej decyzji w bannerze cookies.</p>
+<p>Przeczytaj oświadczenie o ochronie prywatności TikToka (które może się regularnie zmieniać), aby dowiedzieć się, co robi z twoimi (osobistymi) danymi. TikTok jest zlokalizowany w Stanach Zjednoczonych.</p>
 <h3>6. Umieszczone pliki cookie</h3>
 <ul>
-<li>Google Fonts — Marketing — Consent to service google-fonts</li>
-<li>Google reCAPTCHA — Marketing — Consent to service google-recaptcha</li>
-<li>YouTube — Marketing — Consent to service youtube</li>
-<li>Calendly — Funkcjonalne — Consent to service calendly</li>
-<li>TikTok — Marketing, Funkcjonalne — Consent to service tiktok</li>
-<li>Complianz — Funkcjonalne — Consent to service complianz</li>
+<li>Google Fonts — Marketing — ładowane po wyrażeniu zgody na pliki marketingowe</li>
+<li>TikTok (osadzony odtwarzacz wideo) — Marketing, Funkcjonalne — ładowane automatycznie wraz ze stroną</li>
+<li>Preferencja zgody na cookies (zapis w przeglądarce) — Funkcjonalne — niezbędne do zapamiętania Twojego wyboru</li>
 </ul>
 <h3>7. Zgoda</h3>
 <p>Kiedy odwiedzasz naszą stronę po raz pierwszy, pokażemy Ci wyskakujące okienko z wyjaśnieniem dotyczącym plików cookie. Po kliknięciu przycisku "Zapisz preferencje" wyrażasz zgodę na używanie przez nas kategorii plików cookie i wtyczek wybranych w wyskakującym okienku, jak opisano w tym oświadczeniu dotyczącym plików cookie. Korzystanie z plików cookie może zostać wyłączone za pośrednictwem przeglądarki, ale pamiętaj, że nasza witryna może już nie działać poprawnie.</p>
@@ -455,7 +518,7 @@
 <p>Aby skorzystać z tych praw, skontaktuj się z nami. Proszę odnieść się do danych kontaktowych na dole tego oświadczenia cookie. Jeśli masz skargę dotyczącą sposobu postępowania z Twoimi danymi, chcielibyśmy usłyszeć od Ciebie, ale masz również prawo złożyć skargę do organu nadzorczego (organu ochrony danych).</p>
 <h3>10. Dane kontaktowe</h3>
 <p>W przypadku pytań i / lub komentarzy dotyczących naszej polityki dotyczącej plików cookie i tego oświadczenia, prosimy o kontakt z nami za pomocą następujących danych kontaktowych:</p>
-<p>KRTM - KACPER WLAZŁO<br/>woj. ŁÓDZKIE, pow. rawski, gm. Sadkowice, miejsc. Żelazna, nr 61A, 96-208<br/>Polska<br/>Witryna internetowa: https://fabrykavirali.pl<br/>Adres e-mail: biuro@ex.comfabrykavirali.pl<br/>Phone number: 669 744 068</p>
+<p>KRTM - KACPER WLAZŁO<br/>woj. ŁÓDZKIE, pow. rawski, gm. Sadkowice, miejsc. Żelazna, nr 61A, 96-208<br/>Polska<br/>Witryna internetowa: https://fabrykavirali.pl<br/>Adres e-mail: biuro@fabrykavirali.pl<br/>Phone number: 669 744 068</p>
 <p>Ta Polityka Plików Cookies została zsynchronizowana z cookiedatabase.org w dniu 2026-02-24.</p>
 </div>
 </section>
