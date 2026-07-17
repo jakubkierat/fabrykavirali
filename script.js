@@ -191,10 +191,6 @@ startTestimonials();
 const cookieBanner = document.querySelector('[data-cookie-banner]');
 const cookieAccept = document.querySelector('[data-cookie-accept]');
 const cookieDecline = document.querySelector('[data-cookie-decline]');
-const privacyModal = document.querySelector('[data-privacy-modal]');
-const privacyDialog = privacyModal?.querySelector('.privacy-modal__dialog');
-const privacyOpenButtons = document.querySelectorAll('[data-privacy-open]');
-const privacyCloseButtons = document.querySelectorAll('[data-privacy-close]');
 const COOKIE_STORAGE_KEY = 'fabrykaViraliCookieConsent';
 
 const showCookieBanner = () => {
@@ -206,21 +202,6 @@ const showCookieBanner = () => {
 const saveCookieChoice = (choice) => {
   localStorage.setItem(COOKIE_STORAGE_KEY, choice);
   cookieBanner?.classList.remove('is-visible');
-};
-
-const openPrivacyModal = () => {
-  if (!privacyModal) return;
-  privacyModal.classList.add('is-open');
-  privacyModal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('modal-open');
-  privacyDialog?.focus();
-};
-
-const closePrivacyModal = () => {
-  if (!privacyModal) return;
-  privacyModal.classList.remove('is-open');
-  privacyModal.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('modal-open');
 };
 
 // --- Ładowanie Google Fonts (dopiero po zgodzie użytkownika, zgodnie z polityką cookies) ---
@@ -251,12 +232,6 @@ cookieAccept?.addEventListener('click', () => {
   loadGoogleFonts();
 });
 cookieDecline?.addEventListener('click', () => saveCookieChoice('declined'));
-privacyOpenButtons.forEach((button) => button.addEventListener('click', openPrivacyModal));
-privacyCloseButtons.forEach((button) => button.addEventListener('click', closePrivacyModal));
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closePrivacyModal();
-});
 
 showCookieBanner();
 
