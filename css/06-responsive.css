@@ -1351,7 +1351,7 @@
   }
 }
 
-/* Zmiany po uwagach 02/07/2026 — mobile/tablet */
+/* Zmiany po uwagach 02/07/2026 - mobile/tablet */
 @media (max-width: 860px) {
   .hero-primary-cta {
     width: min(100%, 360px);
@@ -1537,7 +1537,7 @@
 }
 
 /* ============================================================
-   Układ "kolażowy" na telefonach — mniej pojedynczej kolumny,
+   Układ "kolażowy" na telefonach - mniej pojedynczej kolumny,
    więcej kafli obok siebie, żeby strona była wyraźnie krótsza.
    Ten blok celowo jest na końcu pliku, żeby nadpisać wcześniejsze
    (czasem sprzeczne) reguły mobilne z poprzednich poprawek.
@@ -1674,7 +1674,7 @@
 }
 
 /* ============================================================
-   FAQ — nowa struktura: rozwijane odpowiedzi (akordeon).
+   FAQ - nowa struktura: rozwijane odpowiedzi (akordeon).
    Ten blok świadomie i całościowo nadpisuje wszystkie wcześniejsze
    reguły dla .why-grid / .why-card z poprzednich poprawek (stara
    struktura HTML już nie istnieje, więc stare reguły by kolidowały).

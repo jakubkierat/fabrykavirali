@@ -84,7 +84,7 @@ contactForm?.addEventListener('submit', async (event) => {
     }
 
     if (response.ok && (data ? data.success : true)) {
-      setFormStatus((data && data.message) || 'Dziękujemy! Wiadomość została wysłana — odezwiemy się najszybciej, jak to możliwe.', 'success');
+      setFormStatus((data && data.message) || 'Dziękujemy! Wiadomość została wysłana - odezwiemy się najszybciej, jak to możliwe.', 'success');
       contactForm.reset();
       if (count) count.textContent = `0 / ${textarea?.maxLength ?? 600}`;
     } else {

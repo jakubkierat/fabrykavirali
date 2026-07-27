@@ -976,7 +976,7 @@
 }
 
 
-/* Ujednolicenie sekcji platform i realizacji — 2026-07 */
+/* Ujednolicenie sekcji platform i realizacji - 2026-07 */
 .platform-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
